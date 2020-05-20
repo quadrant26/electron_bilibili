@@ -9,12 +9,12 @@ var mainWindow = null;
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
         width: 300, 
-        hieght: 300,
+        height: 300,
         webPreferences: {
             nodeIntegration: true
         }
     })
-    mainWindow.loadFile("index.html")
+    mainWindow.loadFile("demo2.html")
 
     mainWindow.on('closed', () => {
         mainWindow = null;
