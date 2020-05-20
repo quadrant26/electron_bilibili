@@ -8,8 +8,8 @@ var mainWindow = null;
 
 app.on('ready', () => {
     mainWindow = new BrowserWindow({
-        width: 300, 
-        height: 300,
+        width: 900, 
+        height: 600,
         webPreferences: {
             nodeIntegration: true
         }
@@ -19,7 +19,7 @@ app.on('ready', () => {
 
     require('./main/menu');
 
-    mainWindow.loadFile("demo2.html")
+    mainWindow.loadFile("demo3.html")
 
     mainWindow.on('closed', () => {
         mainWindow = null;
