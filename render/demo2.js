@@ -15,3 +15,19 @@ window.onload = function (){
         })
     }
 }
+
+const {remote} = require('electron')
+var rightMenuTemplate = [
+    {label: '复制', accelerator: 'ctrl+c'},
+    {label: '粘贴', accelerator: 'ctrl+v'}
+]
+var m = remote.Menu.buildFromTemplate(rightMenuTemplate);
+
+window.addEventListener('contextmenu', function (e){
+    
+
+    e.preventDefault();
+    m.popup({
+        window: remote.getCurrentWindow(m)
+    })
+})
