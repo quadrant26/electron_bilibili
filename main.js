@@ -14,6 +14,9 @@ app.on('ready', () => {
             nodeIntegration: true
         }
     })
+
+    require('./main/menu');
+
     mainWindow.loadFile("demo2.html")
 
     mainWindow.on('closed', () => {
