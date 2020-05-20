@@ -15,6 +15,8 @@ app.on('ready', () => {
         }
     })
 
+    mainWindow.webContents.openDevTools();
+
     require('./main/menu');
 
     mainWindow.loadFile("demo2.html")
