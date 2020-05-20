@@ -7,7 +7,13 @@ var BrowserWindow = electron.BrowserWindow; // 用来控制窗口引入
 var mainWindow = null;
 
 app.on('ready', () => {
-    mainWindow = new BrowserWindow({width: 300, hieght: 300})
+    mainWindow = new BrowserWindow({
+        width: 300, 
+        hieght: 300,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    })
     mainWindow.loadFile("index.html")
 
     mainWindow.on('closed', () => {
