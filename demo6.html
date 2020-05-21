@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消息通知</title>
+</head>
+<body>
+    <button id="noticeBtn">消息通知</button>
+</body>
+<script>
+    
+    var noticeBtn = document.querySelector('#noticeBtn');
+
+    var option = {
+        title: '小二，来订单了，出来接客了',
+        body: '有新订单了'
+    }
+
+    noticeBtn.onclick = function (){
+        new window.Notification(option.title, option)
+    }
+
+</script>
+</html>
