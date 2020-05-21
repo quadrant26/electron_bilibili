@@ -8,6 +8,7 @@
 <body>
     <button id="btn">打开文件</button>
     <button id="savebtn">保存文件</button>
+    <button id="messagebtn">弹出消息对话框</button>
     <img src="" id="image" style="width: 100%; height: auto;" alt="">
 </body>
 <script>
@@ -43,5 +44,20 @@
             console.log(err)
         })
     }
+
+    var messagebtn = document.querySelector("#messagebtn");
+    messagebtn.onclick = function (){
+        dialog.showMessageBox({
+            type: 'question',
+            title: '去吗',
+            message: '去吃火锅吗？',
+            buttons: ['ok', 'cancel']
+        }).then( result => {
+            console.log(result)
+        }).catch( err => {
+            console.log(err)
+        })
+    }
+
 </script>
 </html>
