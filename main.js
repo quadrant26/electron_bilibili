@@ -20,11 +20,13 @@ app.on('ready', () => {
     require('./main/menu');
 
     // 获取BrowserView
+    /*
     var BrowserView = electron.BrowserView;
     var view = new BrowserView()
     mainWindow.setBrowserView(view)
     view.setBounds({x:0, y:120, width: 800, height: 480})
     view.webContents.loadURL('https://www.baidu.com/')
+    */
 
     mainWindow.loadFile("demo3.html")
 

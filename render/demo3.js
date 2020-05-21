@@ -12,5 +12,11 @@ ctn.onclick = function (e){
 }
 
 childopen.onclick = function (){
-    window.open('https://www.baidu.com/')
+    window.open('./popup_page.html')
 }
+
+// 接收
+window.addEventListener('message', (msg) => {
+    var message = document.querySelector("#message");
+    message.innerHTML = JSON.stringify(msg)
+})
