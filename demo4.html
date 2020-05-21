@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件对话框</title>
+</head>
+<body>
+    <button id="btn">打开文件</button>
+    <img src="" id="image" style="width: 100%; height: auto;" alt="">
+</body>
+<script>
+    const {dialog} = require('electron').remote;
+
+    var btn = document.querySelector("#btn");
+    btn.onclick = function (){
+        dialog.showOpenDialog({
+            title: "请选择图片",
+            defaultPath: '320.jpg',     // 指定选择框默认路径
+            filters: [
+                {name: 'img', extensions: ['jpg', 'png']}
+            ],  // 图片过滤器
+            buttonLabel: '打开图片' // 打开文件指定按钮文字
+        }).then( result => {
+            let image = document.getElementById("image");
+            console.log(result)
+            image.setAttribute("src", result.filePaths[0])
+        }).catch( e => {
+            console.log(e)
+        })
+    }
+</script>
+</html>
