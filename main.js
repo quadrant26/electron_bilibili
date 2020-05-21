@@ -42,7 +42,7 @@ app.on('ready', () => {
     view.webContents.loadURL('https://www.baidu.com/')
     */
 
-    mainWindow.loadFile("demo6.html")
+    mainWindow.loadFile("demo7.html")
 
     mainWindow.on('closed', () => {
         mainWindow = null;

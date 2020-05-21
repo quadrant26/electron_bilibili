@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剪切板的使用</title>
+</head>
+<body>
+    <h1>剪切板的使用</h1>
+    <div>
+        激活码：<span id="code">SfxhWfheuA45684878</span>
+        <button id="copy">复制激活码</button>
+    </div>
+</body>
+<script>
+    
+    const {Clipboard} = require('electron');
+    var code = document.querySelector("#code");
+    var copy = document.querySelector("#copy");
+
+    copy.onclick = function(){
+        clipboard.writeText(code.innerHTML)
+        alert('复制成功')
+    }
+
+</script>
+</html>
