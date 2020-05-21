@@ -7,10 +7,12 @@
 </head>
 <body>
     <button id="btn">打开文件</button>
+    <button id="savebtn">保存文件</button>
     <img src="" id="image" style="width: 100%; height: auto;" alt="">
 </body>
 <script>
     const {dialog} = require('electron').remote;
+    const fs = require('fs')
 
     var btn = document.querySelector("#btn");
     btn.onclick = function (){
@@ -27,6 +29,18 @@
             image.setAttribute("src", result.filePaths[0])
         }).catch( e => {
             console.log(e)
+        })
+    }
+
+    var savebtn = document.querySelector('#savebtn')
+    savebtn.onclick = function (){
+        dialog.showSaveDialog({
+            title: '保存文件',
+        }).then( result => {
+            console.log(result)
+            fs.writeFileSync(result.filePath, 'quadrant26')
+        }).catch( err => {
+            console.log(err)
         })
     }
 </script>
